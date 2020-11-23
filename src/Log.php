@@ -4,7 +4,7 @@
  *
  * @package         tourBase
  * @author          David Lienhard <david.lienhard@tourasia.ch>
- * @version         1.0.0, 20.11.2020
+ * @version         1.0.1, 23.11.2020
  * @since           1.0.0, 20.11.2020, created
  * @copyright       tourasia
  */
@@ -19,7 +19,7 @@ use \DavidLienhard\Log\LogInterface;
  * class for logging
  *
  * @author          David Lienhard <david.lienhard@tourasia.ch>
- * @version         1.0.0, 20.11.2020
+ * @version         1.0.1, 23.11.2020
  * @since           1.0.0, 20.11.2020, created
  * @copyright       tourasia
  */
@@ -272,14 +272,14 @@ class Log implements LogInterface
      * gzips a given file
      *
      * @author          David Lienhard <david.lienhard@tourasia.ch>
-     * @version         1.0.0, 20.11.2020
+     * @version         1.0.1, 23.11.2020
      * @since           1.0.0, 20.11.2020, created
      * @copyright       tourasia
      * @return          bool
      */
     private function gzip() : bool
     {
-        $temp = sys_get_temp_dir() . rand(0, 99999) . ".gz";
+        $temp = sys_get_temp_dir() . DIRECTORY_SEPARATOR . rand(0, 99999) . ".gz";
         $source = $this->file;
         $destination = strtolower(substr($source, -3, 3)) === ".gz" ? $source : $source.".gz";
         $mode = "wb9";
