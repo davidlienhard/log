@@ -1,6 +1,6 @@
 <?php
 /**
- * contains Log class
+ * contains Log Stub
  *
  * @package         tourBase
  * @author          David Lienhard <david.lienhard@tourasia.ch>
@@ -16,7 +16,7 @@ namespace DavidLienhard\Log;
 use \DavidLienhard\Log\LogInterface;
 
 /**
- * class for logging
+ * stub for logging
  *
  * @author          David Lienhard <david.lienhard@tourasia.ch>
  * @version         1.0.1, 30.11.2020
