@@ -1,6 +1,0 @@
-directory: ./src/
-options:
-  - fail-on-warnings
-exclude:
-  - vendor/*
-  - tests/*
