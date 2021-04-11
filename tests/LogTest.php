@@ -8,7 +8,7 @@ use \PHPUnit\Framework\TestCase;
 use \DavidLienhard\Log\Log;
 use \DavidLienhard\Log\LogInterface;
 
-define("TEMP_DIR", sys_get_temp_dir() . DIRECTORY_SEPARATOR);
+define("TEMP_DIR", sys_get_temp_dir().DIRECTORY_SEPARATOR);
 
 class ScriptLogTest extends TestCase
 {
@@ -28,7 +28,7 @@ class ScriptLogTest extends TestCase
     */
     public function testCanBeCreated() : void
     {
-        $log = new Log(TEMP_DIR . "testfile_".rand(0, 10000).".log.gz");
+        $log = new Log(TEMP_DIR."testfile_".rand(0, 10000).".log.gz");
 
         $this->assertInstanceOf(
             Log::class,
@@ -47,7 +47,7 @@ class ScriptLogTest extends TestCase
     */
     public function testFileIsCreated() : void
     {
-        $file = TEMP_DIR . "testfile_".rand(0, 10000).".log";
+        $file = TEMP_DIR."testfile_".rand(0, 10000).".log";
 
         $log = new Log($file);
 
@@ -69,7 +69,7 @@ class ScriptLogTest extends TestCase
     */
     public function testStringCanBeWritten() : void
     {
-        $log = new Log(TEMP_DIR . "testfile_".rand(0, 10000).".log.gz");
+        $log = new Log(TEMP_DIR."testfile_".rand(0, 10000).".log.gz");
 
         $this->assertInstanceOf(
             Log::class,
@@ -87,7 +87,7 @@ class ScriptLogTest extends TestCase
     */
     public function testCanCloseFile() : void
     {
-        $log = new Log(TEMP_DIR . "testfile_".rand(0, 10000).".log.gz");
+        $log = new Log(TEMP_DIR."testfile_".rand(0, 10000).".log.gz");
 
         $this->assertInstanceOf(
             Log::class,
@@ -104,7 +104,7 @@ class ScriptLogTest extends TestCase
     */
     public function testCloseDeletesFileWithZeroWrites() : void
     {
-        $file = TEMP_DIR . "testfile_".rand(0, 10000).".log.gz";
+        $file = TEMP_DIR."testfile_".rand(0, 10000).".log.gz";
 
         $log = new Log($file);
 
@@ -123,7 +123,7 @@ class ScriptLogTest extends TestCase
     */
     public function testCanSetSilentToTrue() : void
     {
-        $log = new Log(TEMP_DIR . "testfile_".rand(0, 10000).".log.gz");
+        $log = new Log(TEMP_DIR."testfile_".rand(0, 10000).".log.gz");
         $log->silent(true);
         $this->assertTrue(true);
     }
@@ -134,7 +134,7 @@ class ScriptLogTest extends TestCase
     */
     public function testCanSetSilentToFalse() : void
     {
-        $log = new Log(TEMP_DIR . "testfile_".rand(0, 10000).".log.gz");
+        $log = new Log(TEMP_DIR."testfile_".rand(0, 10000).".log.gz");
         $log->silent(false);
         $this->assertTrue(true);
     }
