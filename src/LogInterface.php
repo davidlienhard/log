@@ -47,7 +47,6 @@ interface LogInterface
      * @param           string          $text   the line to write
      * @param           bool            $nl     create a newline after the text
      * @param           bool            $date   add the date before the text
-     * @return          bool
      */
     public function write(string $text, bool $nl = true, bool $date = true) : bool;
 
@@ -58,7 +57,6 @@ interface LogInterface
      * @version         1.0.0, 20.11.2020
      * @since           1.0.0, 20.11.2020, created
      * @copyright       tourasia
-     * @return          bool
      */
     public function close() : bool;
 
@@ -70,7 +68,6 @@ interface LogInterface
      * @since           1.0.0, 20.11.2020, created
      * @copyright       tourasia
      * @param           bool            $silent         state of the silent flag
-     * @return          void
      */
     public function silent(bool $silent = true) : void;
 

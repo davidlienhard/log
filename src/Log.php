@@ -25,23 +25,14 @@ use \DavidLienhard\Log\LogInterface;
  */
 class Log implements LogInterface
 {
-    /**
-     * file to save the logs
-     * @var             string
-     */
-    private $file;
+    /** file to save the logs */
+    private string $file;
 
-    /**
-     * whether to use gz compression
-     * @var             bool
-     */
-    private $gz;
+    /** whether to use gz compression */
+    private bool $gz;
 
-    /**
-     * whether to append data to the file
-     * @var             bool
-     */
-    private $append;
+    /** whether to append data to the file */
+    private bool $append;
 
     /**
      * filepointer
@@ -53,41 +44,28 @@ class Log implements LogInterface
      * list of errors
      * @var             array
      */
-    private $errors = [ ];
+    private array $errors = [];
 
-    /**
-     * stay silent or print the errors to stdout
-     * @var             bool
-     */
-    private $silent = false;
+    /** stay silent or print the errors to stdout */
+    private bool $silent = false;
 
     /**
      * if the file exists when calling the class
      * will be used to determine if the file can be deleted when closing
-     * @var            bool
      */
-    private $exists = false;
+    private bool $exists = false;
 
-    /**
-     * number of write commands
-     * @var            int
-     */
-    private $writes = 0;
+    /** number of write commands */
+    private int $writes = 0;
 
-    /**
-     * function name to use to open file
-     */
-    private $openFunction;
+    /** function name to use to open file */
+    private string $openFunction;
 
-    /**
-     * function name to use to write to file
-     */
-    private $writeFunction;
+    /** function name to use to write to file */
+    private string $writeFunction;
 
-    /**
-     * function name to use to close file
-     */
-    private $closeFunction;
+    /** function name to use to close file */
+    private string $closeFunction;
 
 
 
@@ -111,7 +89,7 @@ class Log implements LogInterface
     public function __construct(string $file, bool $gz = true, bool $append = false)
     {
         // check if parameter silent is set in command line
-        $this->silent = in_array(strtolower("silent"), array_map("strtolower", $_SERVER['argv'] ?? [ ]));
+        $this->silent = in_array(strtolower("silent"), array_map("strtolower", $_SERVER['argv'] ?? []));
 
         $this->file = $file;
         $this->gz = $gz;
@@ -139,7 +117,6 @@ class Log implements LogInterface
      * @param           string          $text   the line to write
      * @param           bool            $nl     create a newline after the text
      * @param           bool            $date   add thge date before the text
-     * @return          bool
      * @uses            self::$fp
      * @uses            self::$file
      * @uses            self::$errors
@@ -174,10 +151,10 @@ class Log implements LogInterface
             }
 
             $this->fp = $fp;
-        }
+        }//end if
 
 
-        $text = ($date ? date("d.m.y H:i:s")." " : "") . $text . ($nl ? "\n" : "");
+        $text = ($date ? date("d.m.y H:i:s")." " : "").$text.($nl ? "\n" : "");
 
         if (!is_resource($this->fp)) {
             $this->errors[] = "\$fp is not a resource";
@@ -204,7 +181,6 @@ class Log implements LogInterface
      * @version         1.0.0, 20.11.2020
      * @since           1.0.0, 20.11.2020, created
      * @copyright       tourasia
-     * @return          bool
      * @uses            self::$fp
      * @uses            self::$errors
      * @uses            self::$writes
@@ -245,7 +221,6 @@ class Log implements LogInterface
      * @since           1.0.0, 20.11.2020, created
      * @copyright       tourasia
      * @param           bool            $silent         state of the silent flag
-     * @return          void
      * @uses            self::$silent
      */
     public function silent(bool $silent = true) : void
@@ -275,11 +250,10 @@ class Log implements LogInterface
      * @version         1.0.1, 23.11.2020
      * @since           1.0.0, 20.11.2020, created
      * @copyright       tourasia
-     * @return          bool
      */
     private function gzip() : bool
     {
-        $temp = sys_get_temp_dir() . DIRECTORY_SEPARATOR . rand(0, 99999) . ".gz";
+        $temp = sys_get_temp_dir().DIRECTORY_SEPARATOR.rand(0, 99999).".gz";
         $source = $this->file;
         $destination = strtolower(substr($source, -3, 3)) === ".gz" ? $source : $source.".gz";
         $mode = "wb9";
