@@ -4,8 +4,6 @@
  *
  * @package         tourBase
  * @author          David Lienhard <david.lienhard@tourasia.ch>
- * @version         1.0.1, 23.11.2020
- * @since           1.0.0, 20.11.2020, created
  * @copyright       tourasia
  */
 
@@ -19,8 +17,6 @@ use \DavidLienhard\Log\LogInterface;
  * class for logging
  *
  * @author          David Lienhard <david.lienhard@tourasia.ch>
- * @version         1.0.1, 23.11.2020
- * @since           1.0.0, 20.11.2020, created
  * @copyright       tourasia
  */
 class Log implements LogInterface
@@ -73,8 +69,6 @@ class Log implements LogInterface
      * initializes the class
      *
      * @author          David Lienhard <david.lienhard@tourasia.ch>
-     * @version         1.0.0, 20.11.2020
-     * @since           1.0.0, 20.11.2020, created
      * @copyright       tourasia
      * @param           string          $file       the file to save the logfiles to
      * @param           bool            $gz         whether to save data data with gz compression
@@ -111,8 +105,6 @@ class Log implements LogInterface
      * write a new line
      *
      * @author          David Lienhard <david.lienhard@tourasia.ch>
-     * @version         1.0.0, 20.11.2020
-     * @since           1.0.0, 20.11.2020, created
      * @copyright       tourasia
      * @param           string          $text   the line to write
      * @param           bool            $nl     create a newline after the text
@@ -178,8 +170,6 @@ class Log implements LogInterface
      * close the logfile
      *
      * @author          David Lienhard <david.lienhard@tourasia.ch>
-     * @version         1.0.0, 20.11.2020
-     * @since           1.0.0, 20.11.2020, created
      * @copyright       tourasia
      * @uses            self::$fp
      * @uses            self::$errors
@@ -217,8 +207,6 @@ class Log implements LogInterface
      * sets the silent flag
      *
      * @author          David Lienhard <david.lienhard@tourasia.ch>
-     * @version         1.0.0, 20.11.2020
-     * @since           1.0.0, 20.11.2020, created
      * @copyright       tourasia
      * @param           bool            $silent         state of the silent flag
      * @uses            self::$silent
@@ -232,8 +220,6 @@ class Log implements LogInterface
      * returns all errors occurred duing logging
      *
      * @author          David Lienhard <david.lienhard@tourasia.ch>
-     * @version         1.0.0, 20.11.2020
-     * @since           1.0.0, 20.11.2020, created
      * @copyright       tourasia
      * @return          array
      * @uses            self::$errors
@@ -247,8 +233,6 @@ class Log implements LogInterface
      * gzips a given file
      *
      * @author          David Lienhard <david.lienhard@tourasia.ch>
-     * @version         1.0.1, 23.11.2020
-     * @since           1.0.0, 20.11.2020, created
      * @copyright       tourasia
      */
     private function gzip() : bool
