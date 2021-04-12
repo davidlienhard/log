@@ -4,8 +4,6 @@
  *
  * @package         tourBase
  * @author          David Lienhard <david.lienhard@tourasia.ch>
- * @version         1.0.0, 20.11.2020
- * @since           1.0.0, 20.11.2020, created
  * @copyright       tourasia
  */
 
@@ -17,8 +15,6 @@ namespace DavidLienhard\Log;
  * interface for logging
  *
  * @author          David Lienhard <david.lienhard@tourasia.ch>
- * @version         1.0.0, 20.11.2020
- * @since           1.0.0, 20.11.2020, created
  * @copyright       tourasia
  */
 interface LogInterface
@@ -27,8 +23,6 @@ interface LogInterface
      * initializes the class
      *
      * @author          David Lienhard <david.lienhard@tourasia.ch>
-     * @version         1.0.0, 20.11.2020
-     * @since           1.0.0, 20.11.2020, created
      * @copyright       tourasia
      * @param           string          $file       the file to save the logfiles to
      * @param           bool            $gz         whether to save data data with gz compression
@@ -41,8 +35,6 @@ interface LogInterface
      * write a new line
      *
      * @author          David Lienhard <david.lienhard@tourasia.ch>
-     * @version         1.0.0, 20.11.2020
-     * @since           1.0.0, 20.11.2020, created
      * @copyright       tourasia
      * @param           string          $text   the line to write
      * @param           bool            $nl     create a newline after the text
@@ -54,8 +46,6 @@ interface LogInterface
      * close the logfile
      *
      * @author          David Lienhard <david.lienhard@tourasia.ch>
-     * @version         1.0.0, 20.11.2020
-     * @since           1.0.0, 20.11.2020, created
      * @copyright       tourasia
      */
     public function close() : bool;
@@ -64,8 +54,6 @@ interface LogInterface
      * sets the silent flag
      *
      * @author          David Lienhard <david.lienhard@tourasia.ch>
-     * @version         1.0.0, 20.11.2020
-     * @since           1.0.0, 20.11.2020, created
      * @copyright       tourasia
      * @param           bool            $silent         state of the silent flag
      */
@@ -75,8 +63,6 @@ interface LogInterface
      * returns all errors occurred duing logging
      *
      * @author          David Lienhard <david.lienhard@tourasia.ch>
-     * @version         1.0.0, 20.11.2020
-     * @since           1.0.0, 20.11.2020, created
      * @copyright       tourasia
      * @return          array
      */

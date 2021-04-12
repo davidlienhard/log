@@ -4,8 +4,6 @@
  *
  * @package         tourBase
  * @author          David Lienhard <david.lienhard@tourasia.ch>
- * @version         1.0.1, 30.11.2020
- * @since           1.0.1, 30.11.2020, created
  * @copyright       tourasia
  */
 
@@ -19,8 +17,6 @@ use \DavidLienhard\Log\LogInterface;
  * stub for logging
  *
  * @author          David Lienhard <david.lienhard@tourasia.ch>
- * @version         1.0.1, 30.11.2020
- * @since           1.0.1, 30.11.2020, created
  * @copyright       tourasia
  */
 class Stub implements LogInterface
@@ -57,8 +53,6 @@ class Stub implements LogInterface
      * initializes the class
      *
      * @author          David Lienhard <david.lienhard@tourasia.ch>
-     * @version         1.0.1, 30.11.2020
-     * @since           1.0.1, 30.11.2020, created
      * @copyright       tourasia
      * @param           string          $file       the file to save the logfiles to
      * @param           bool            $gz         whether to save data data with gz compression
@@ -79,8 +73,6 @@ class Stub implements LogInterface
      * write a new line
      *
      * @author          David Lienhard <david.lienhard@tourasia.ch>
-     * @version         1.0.1, 30.11.2020
-     * @since           1.0.1, 30.11.2020, created
      * @copyright       tourasia
      * @param           string          $text   the line to write
      * @param           bool            $nl     create a newline after the text
@@ -97,8 +89,6 @@ class Stub implements LogInterface
      * close the logfile
      *
      * @author          David Lienhard <david.lienhard@tourasia.ch>
-     * @version         1.0.1, 30.11.2020
-     * @since           1.0.1, 30.11.2020, created
      * @copyright       tourasia
      */
     public function close() : bool
@@ -110,8 +100,6 @@ class Stub implements LogInterface
      * sets the silent flag
      *
      * @author          David Lienhard <david.lienhard@tourasia.ch>
-     * @version         1.0.1, 30.11.2020
-     * @since           1.0.1, 30.11.2020, created
      * @copyright       tourasia
      * @param           bool            $silent         state of the silent flag
      * @uses            self::$silent
@@ -125,8 +113,6 @@ class Stub implements LogInterface
      * returns all errors occurred during logging
      *
      * @author          David Lienhard <david.lienhard@tourasia.ch>
-     * @version         1.0.1, 30.11.2020
-     * @since           1.0.1, 30.11.2020, created
      * @copyright       tourasia
      * @return          array
      * @uses            self::$errors
