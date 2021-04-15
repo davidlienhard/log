@@ -83,7 +83,11 @@ class Log implements LogInterface
     public function __construct(string $file, bool $gz = true, bool $append = false)
     {
         // check if parameter silent is set in command line
-        $this->silent = in_array(strtolower("silent"), array_map("strtolower", $_SERVER['argv'] ?? []));
+        $this->silent = in_array(
+            strtolower("silent"),
+            array_map("strtolower", $_SERVER['argv'] ?? []),
+            true
+        );
 
         $this->file = $file;
         $this->gz = $gz;
