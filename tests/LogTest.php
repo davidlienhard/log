@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace DavidLienhard;
 
-use \PHPUnit\Framework\TestCase;
-use \DavidLienhard\Log\Log;
-use \DavidLienhard\Log\LogInterface;
+use DavidLienhard\Log\Log;
+use DavidLienhard\Log\LogInterface;
+use PHPUnit\Framework\TestCase;
 
 define("TEMP_DIR", sys_get_temp_dir().DIRECTORY_SEPARATOR);
 
@@ -30,15 +30,9 @@ class ScriptLogTest extends TestCase
     {
         $log = new Log(TEMP_DIR."testfile_".rand(0, 10000).".log.gz");
 
-        $this->assertInstanceOf(
-            Log::class,
-            $log
-        );
+        $this->assertInstanceOf(Log::class, $log);
 
-        $this->assertInstanceOf(
-            LogInterface::class,
-            $log
-        );
+        $this->assertInstanceOf(LogInterface::class, $log);
     }
 
 
@@ -51,10 +45,7 @@ class ScriptLogTest extends TestCase
 
         $log = new Log($file);
 
-        $this->assertInstanceOf(
-            Log::class,
-            $log
-        );
+        $this->assertInstanceOf(Log::class, $log);
 
         $log->silent(true);
         $log->write("test");
@@ -71,10 +62,7 @@ class ScriptLogTest extends TestCase
     {
         $log = new Log(TEMP_DIR."testfile_".rand(0, 10000).".log.gz");
 
-        $this->assertInstanceOf(
-            Log::class,
-            $log
-        );
+        $this->assertInstanceOf(Log::class, $log);
 
         $log->silent(true);
         $this->assertTrue($log->write("test"));
@@ -89,10 +77,7 @@ class ScriptLogTest extends TestCase
     {
         $log = new Log(TEMP_DIR."testfile_".rand(0, 10000).".log.gz");
 
-        $this->assertInstanceOf(
-            Log::class,
-            $log
-        );
+        $this->assertInstanceOf(Log::class, $log);
 
         $this->assertTrue($log->close());
     }
@@ -108,10 +93,7 @@ class ScriptLogTest extends TestCase
 
         $log = new Log($file);
 
-        $this->assertInstanceOf(
-            Log::class,
-            $log
-        );
+        $this->assertInstanceOf(Log::class, $log);
 
         $this->assertTrue($log->close());
         $this->assertFalse(file_exists($file));
