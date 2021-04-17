@@ -1,6 +1,6 @@
 {
     "name": "davidlienhard/log",
-    "license": "proprietary",
+    "license": ["MIT"],
     "description": "🐘 php library for easy logging",
     "keywords": [ "error", "log", "php", "library" ],
     "type": "libary",
