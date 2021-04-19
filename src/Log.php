@@ -3,8 +3,8 @@
  * contains Log class
  *
  * @package         tourBase
- * @author          David Lienhard <david.lienhard@tourasia.ch>
- * @copyright       tourasia
+ * @author          David Lienhard <github@lienhard.win>
+ * @copyright       David Lienhard
  */
 
 declare(strict_types=1);
@@ -16,8 +16,8 @@ use \DavidLienhard\Log\LogInterface;
 /**
  * class for logging
  *
- * @author          David Lienhard <david.lienhard@tourasia.ch>
- * @copyright       tourasia
+ * @author          David Lienhard <github@lienhard.win>
+ * @copyright       David Lienhard
  */
 class Log implements LogInterface
 {
@@ -68,8 +68,8 @@ class Log implements LogInterface
     /**
      * initializes the class
      *
-     * @author          David Lienhard <david.lienhard@tourasia.ch>
-     * @copyright       tourasia
+     * @author          David Lienhard <github@lienhard.win>
+     * @copyright       David Lienhard
      * @param           string          $file       the file to save the logfiles to
      * @param           bool            $gz         whether to save data data with gz compression
      * @param           bool            $append     whether to append data to the file
@@ -108,8 +108,8 @@ class Log implements LogInterface
     /**
      * write a new line
      *
-     * @author          David Lienhard <david.lienhard@tourasia.ch>
-     * @copyright       tourasia
+     * @author          David Lienhard <github@lienhard.win>
+     * @copyright       David Lienhard
      * @param           string          $text   the line to write
      * @param           bool            $nl     create a newline after the text
      * @param           bool            $date   add thge date before the text
@@ -173,8 +173,8 @@ class Log implements LogInterface
     /**
      * close the logfile
      *
-     * @author          David Lienhard <david.lienhard@tourasia.ch>
-     * @copyright       tourasia
+     * @author          David Lienhard <github@lienhard.win>
+     * @copyright       David Lienhard
      * @uses            self::$fp
      * @uses            self::$errors
      * @uses            self::$writes
@@ -210,8 +210,8 @@ class Log implements LogInterface
     /**
      * sets the silent flag
      *
-     * @author          David Lienhard <david.lienhard@tourasia.ch>
-     * @copyright       tourasia
+     * @author          David Lienhard <github@lienhard.win>
+     * @copyright       David Lienhard
      * @param           bool            $silent         state of the silent flag
      * @uses            self::$silent
      */
@@ -223,8 +223,8 @@ class Log implements LogInterface
     /**
      * returns all errors occurred duing logging
      *
-     * @author          David Lienhard <david.lienhard@tourasia.ch>
-     * @copyright       tourasia
+     * @author          David Lienhard <github@lienhard.win>
+     * @copyright       David Lienhard
      * @return          array
      * @uses            self::$errors
      */
@@ -236,8 +236,8 @@ class Log implements LogInterface
     /**
      * gzips a given file
      *
-     * @author          David Lienhard <david.lienhard@tourasia.ch>
-     * @copyright       tourasia
+     * @author          David Lienhard <github@lienhard.win>
+     * @copyright       David Lienhard
      */
     private function gzip() : bool
     {
