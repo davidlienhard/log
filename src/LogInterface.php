@@ -2,7 +2,6 @@
 /**
  * contains Log interface
  *
- * @package         tourBase
  * @author          David Lienhard <github@lienhard.win>
  * @copyright       David Lienhard
  */
