@@ -2,7 +2,6 @@
 /**
  * contains Log class
  *
- * @package         tourBase
  * @author          David Lienhard <github@lienhard.win>
  * @copyright       David Lienhard
  */
@@ -74,11 +73,6 @@ class Log implements LogInterface
      * @param           bool            $gz         whether to save data data with gz compression
      * @param           bool            $append     whether to append data to the file
      * @return          void
-     * @uses            self::$silent
-     * @uses            self::$file
-     * @uses            self::$gz
-     * @uses            self::$append
-     * @uses            self::$exists
      */
     public function __construct(string $file, bool $gz = true, bool $append = false)
     {
@@ -112,12 +106,7 @@ class Log implements LogInterface
      * @copyright       David Lienhard
      * @param           string          $text   the line to write
      * @param           bool            $nl     create a newline after the text
-     * @param           bool            $date   add thge date before the text
-     * @uses            self::$fp
-     * @uses            self::$file
-     * @uses            self::$errors
-     * @uses            self::$silent
-     * @uses            self::$writes
+     * @param           bool            $date   add the date before the text
      */
     public function write(string $text, bool $nl = true, bool $date = true) : bool
     {
@@ -175,9 +164,6 @@ class Log implements LogInterface
      *
      * @author          David Lienhard <github@lienhard.win>
      * @copyright       David Lienhard
-     * @uses            self::$fp
-     * @uses            self::$errors
-     * @uses            self::$writes
      */
     public function close() : bool
     {
@@ -213,7 +199,6 @@ class Log implements LogInterface
      * @author          David Lienhard <github@lienhard.win>
      * @copyright       David Lienhard
      * @param           bool            $silent         state of the silent flag
-     * @uses            self::$silent
      */
     public function silent(bool $silent = true) : void
     {
@@ -226,7 +211,6 @@ class Log implements LogInterface
      * @author          David Lienhard <github@lienhard.win>
      * @copyright       David Lienhard
      * @return          array
-     * @uses            self::$errors
      */
     public function getErrors() : array
     {

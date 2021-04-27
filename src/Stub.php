@@ -2,7 +2,6 @@
 /**
  * contains Log Stub
  *
- * @package         tourBase
  * @author          David Lienhard <github@lienhard.win>
  * @copyright       David Lienhard
  */
@@ -21,19 +20,13 @@ use \DavidLienhard\Log\LogInterface;
  */
 class Stub implements LogInterface
 {
-    /**
-     * file to save the logs
-     */
+    /** file to save the logs */
     private string $file;
 
-    /**
-     * whether to use gz compression
-     */
+    /** whether to use gz compression */
     private bool $gz;
 
-    /**
-     * whether to append data to the file
-     */
+    /** whether to append data to the file */
     private bool $append;
 
     /**
@@ -42,9 +35,7 @@ class Stub implements LogInterface
      */
     private array $errors = [];
 
-    /**
-     * stay silent or print the errors to stdout
-     */
+    /** stay silent or print the errors to stdout */
     private bool $silent = false;
 
 
@@ -58,9 +49,6 @@ class Stub implements LogInterface
      * @param           bool            $gz         whether to save data data with gz compression
      * @param           bool            $append     whether to append data to the file
      * @return          void
-     * @uses            self::$file
-     * @uses            self::$gz
-     * @uses            self::$append
      */
     public function __construct(string $file, bool $gz = true, bool $append = false)
     {
@@ -102,7 +90,6 @@ class Stub implements LogInterface
      * @author          David Lienhard <github@lienhard.win>
      * @copyright       David Lienhard
      * @param           bool            $silent         state of the silent flag
-     * @uses            self::$silent
      */
     public function silent(bool $silent = true) : void
     {
@@ -115,7 +102,6 @@ class Stub implements LogInterface
      * @author          David Lienhard <github@lienhard.win>
      * @copyright       David Lienhard
      * @return          array
-     * @uses            self::$errors
      */
     public function getErrors() : array
     {
