@@ -20,19 +20,13 @@ use \DavidLienhard\Log\LogInterface;
  */
 class Stub implements LogInterface
 {
-    /**
-     * file to save the logs
-     */
+    /** file to save the logs */
     private string $file;
 
-    /**
-     * whether to use gz compression
-     */
+    /** whether to use gz compression */
     private bool $gz;
 
-    /**
-     * whether to append data to the file
-     */
+    /** whether to append data to the file */
     private bool $append;
 
     /**
@@ -41,9 +35,7 @@ class Stub implements LogInterface
      */
     private array $errors = [];
 
-    /**
-     * stay silent or print the errors to stdout
-     */
+    /** stay silent or print the errors to stdout */
     private bool $silent = false;
 
 
