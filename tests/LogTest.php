@@ -19,7 +19,7 @@ class ScriptLogTest extends TestCase
     {
         $this->expectException(\ArgumentCountError::class);
 
-        $log = new Log;
+        new Log;
     }
 
 
