@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace DavidLienhard\Log;
 
-use \DavidLienhard\Log\LogInterface;
+use DavidLienhard\Log\LogInterface;
 
 /**
  * class for logging
