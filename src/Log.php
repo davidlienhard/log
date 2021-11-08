@@ -245,7 +245,7 @@ class Log implements LogInterface
         }
 
         while (!feof($fp_in)) {
-            gzwrite($fp_out, fread($fp_in, 1024 * 512));
+            gzwrite($fp_out, fread($fp_in, 1024 * 512) ?: "");
         }
 
         fclose($fp_in);
