@@ -25,6 +25,9 @@ class Log implements LogInterface
     /** whether to use gz compression */
     private bool $gz;
 
+    /** whether to write data with compression or not */
+    private bool $writeGz;
+
     /** whether to append data to the file */
     private bool $append;
 
@@ -111,10 +114,6 @@ class Log implements LogInterface
     {
         if ($this->fp === null) {
             $path = pathinfo($this->file);
-            if ($path === false) {
-                $this->errors[] = "could not get pathinfo for '".$this->file."'";
-                return false;
-            }
 
             // create log folder if necessary
             if (!is_dir($path['dirname']) && mkdir($path['dirname'], 0755, true) === false) {
@@ -127,6 +126,11 @@ class Log implements LogInterface
             $mode .= $this->writeGz ? "9" : "";
 
             $fn = $this->openFunction;
+            if (!is_callable($fn)) {
+                $this->errors[] = "function '".$fn."' is not callable";
+                return false;
+            }
+
             $fp = $fn($this->file, $mode);
 
             if ($fp === false) {
@@ -148,6 +152,11 @@ class Log implements LogInterface
         echo !$this->silent ? $text : "";
 
         $fn = $this->writeFunction;
+        if (!is_callable($fn)) {
+            $this->errors[] = "function '".$fn."' is not callable";
+            return false;
+        }
+
         if ($fn($this->fp, $text) === false) {
             $this->errors[] = "could not write text '".$text."'";
             return false;
@@ -176,6 +185,11 @@ class Log implements LogInterface
         }
 
         $fn = $this->closeFunction;
+        if (!is_callable($fn)) {
+            $this->errors[] = "function '".$fn."' is not callable";
+            return false;
+        }
+
         if ($fn($this->fp) === false) {
             $this->errors[] = "could not close file";
             return false;
@@ -242,7 +256,7 @@ class Log implements LogInterface
         }
 
         while (!feof($fp_in)) {
-            gzwrite($fp_out, fread($fp_in, 1024 * 512));
+            gzwrite($fp_out, fread($fp_in, 1024 * 512) ?: "");
         }
 
         fclose($fp_in);
