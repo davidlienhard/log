@@ -127,6 +127,11 @@ class Log implements LogInterface
             $mode .= $this->writeGz ? "9" : "";
 
             $fn = $this->openFunction;
+            if (!is_callable($fn)) {
+                $this->errors[] = "function '".$fn."' is not callable";
+                return false;
+            }
+
             $fp = $fn($this->file, $mode);
 
             if ($fp === false) {
@@ -148,6 +153,11 @@ class Log implements LogInterface
         echo !$this->silent ? $text : "";
 
         $fn = $this->writeFunction;
+        if (!is_callable($fn)) {
+            $this->errors[] = "function '".$fn."' is not callable";
+            return false;
+        }
+
         if ($fn($this->fp, $text) === false) {
             $this->errors[] = "could not write text '".$text."'";
             return false;
@@ -176,6 +186,11 @@ class Log implements LogInterface
         }
 
         $fn = $this->closeFunction;
+        if (!is_callable($fn)) {
+            $this->errors[] = "function '".$fn."' is not callable";
+            return false;
+        }
+
         if ($fn($this->fp) === false) {
             $this->errors[] = "could not close file";
             return false;
