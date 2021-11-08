@@ -25,6 +25,9 @@ class Log implements LogInterface
     /** whether to use gz compression */
     private bool $gz;
 
+    /** whether to write data with compression or not */
+    private bool $writeGz;
+
     /** whether to append data to the file */
     private bool $append;
 
