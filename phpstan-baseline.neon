@@ -1,0 +1,22 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Property DavidLienhard\\\\Log\\\\Stub\\:\\:\\$append is never read, only written\\.$#"
+			count: 1
+			path: src/Stub.php
+
+		-
+			message: "#^Property DavidLienhard\\\\Log\\\\Stub\\:\\:\\$file is never read, only written\\.$#"
+			count: 1
+			path: src/Stub.php
+
+		-
+			message: "#^Property DavidLienhard\\\\Log\\\\Stub\\:\\:\\$gz is never read, only written\\.$#"
+			count: 1
+			path: src/Stub.php
+
+		-
+			message: "#^Property DavidLienhard\\\\Log\\\\Stub\\:\\:\\$silent is never read, only written\\.$#"
+			count: 1
+			path: src/Stub.php
+
