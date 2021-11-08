@@ -111,10 +111,6 @@ class Log implements LogInterface
     {
         if ($this->fp === null) {
             $path = pathinfo($this->file);
-            if ($path === false) {
-                $this->errors[] = "could not get pathinfo for '".$this->file."'";
-                return false;
-            }
 
             // create log folder if necessary
             if (!is_dir($path['dirname']) && mkdir($path['dirname'], 0755, true) === false) {
