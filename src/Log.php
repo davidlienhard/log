@@ -25,6 +25,9 @@ class Log implements LogInterface
     /** whether to use gz compression */
     private bool $gz;
 
+    /** whether to write data with compression or not */
+    private bool $writeGz;
+
     /** whether to append data to the file */
     private bool $append;
 
@@ -257,7 +260,7 @@ class Log implements LogInterface
         }
 
         while (!feof($fp_in)) {
-            gzwrite($fp_out, fread($fp_in, 1024 * 512));
+            gzwrite($fp_out, fread($fp_in, 1024 * 512) ?: "");
         }
 
         fclose($fp_in);
