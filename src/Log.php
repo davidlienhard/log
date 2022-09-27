@@ -115,6 +115,12 @@ class Log implements LogInterface
         if ($this->fp === null) {
             $path = pathinfo($this->file);
 
+            // check if dirname can be fetched
+            if (!isset($path['dirname'])) {
+                $this->errors[] = "direcory name cannot be fetched'";
+                return false;
+            }
+
             // create log folder if necessary
             if (!is_dir($path['dirname']) && mkdir($path['dirname'], 0755, true) === false) {
                 $this->errors[] = "could not create folder '".$path['dirname']."'";
