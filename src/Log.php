@@ -37,10 +37,7 @@ class Log implements LogInterface
      */
     private $fp;
 
-    /**
-     * list of errors
-     * @var             array
-     */
+    /** list of errors */
     private array $errors = [];
 
     /** stay silent or print the errors to stdout */
@@ -229,7 +226,6 @@ class Log implements LogInterface
      *
      * @author          David Lienhard <github@lienhard.win>
      * @copyright       David Lienhard
-     * @return          array
      */
     public function getErrors() : array
     {
