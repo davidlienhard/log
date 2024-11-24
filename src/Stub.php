@@ -28,10 +28,7 @@ class Stub implements LogInterface
     /** whether to append data to the file */
     private bool $append;
 
-    /**
-     * list of errors
-     * @var             array
-     */
+    /** list of errors */
     private array $errors = [];
 
     /** stay silent or print the errors to stdout */
@@ -100,7 +97,6 @@ class Stub implements LogInterface
      *
      * @author          David Lienhard <github@lienhard.win>
      * @copyright       David Lienhard
-     * @return          array
      */
     public function getErrors() : array
     {
