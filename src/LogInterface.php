@@ -62,7 +62,6 @@ interface LogInterface
      *
      * @author          David Lienhard <github@lienhard.win>
      * @copyright       David Lienhard
-     * @return          array
      */
     public function getErrors() : array;
 }
